@@ -6,7 +6,7 @@ Go into the folder of the project root and:
 $: docker-compose up -d
 ```
 
-## Part one - the command
+## Part one - the crawl command
 In the docker container do:
 ```bash
 $: cd /app/app
