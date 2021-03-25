@@ -1,0 +1,9 @@
+{
+    "name": "diphuaji/phalcon-crawler",
+    "require-dev": {
+        "phalcon/devtools": "^4.0"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
