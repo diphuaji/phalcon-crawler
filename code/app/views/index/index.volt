@@ -21,6 +21,9 @@
         </tbody>
     </table>
     <ul>
+        <li>
+            Total pages crawled: {{ tableData|length }}
+        </li>
         {% for key in summaryFieldNames|keys %}
         <li>
             {{ summaryFieldNames[key] }}: {{ summary[key] }}
