@@ -14,7 +14,9 @@ class LoggerServiceProvider implements ServiceProviderInterface
         $di->set(
             'logger',
             function () {
-                $adapter = new Stream(BASE_PATH.'/storage/logs/main.log');
+                $path = BASE_PATH . '/storage/logs';
+                mkdir($path, 0777, true);
+                $adapter = new Stream("$path/main.log");
                 $logger  = new Logger(
                     'messages',
                     [

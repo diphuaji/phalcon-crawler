@@ -14,6 +14,8 @@ class VoltServiceProvider implements ServiceProviderInterface
         $di->setShared(
             'voltService',
             function (ViewBaseInterface $view) use ($di) {
+                $path = BASE_PATH . '/storage/cache/volt/';
+                mkdir($path, 0777, true);
                 $volt = new Volt($view, $di);
                 $volt->setOptions(
                     [
@@ -21,7 +23,7 @@ class VoltServiceProvider implements ServiceProviderInterface
                         'extension' => '.php',
                         'separator' => '_',
                         'stat' => true,
-                        'path' => BASE_PATH . '/storage/cache/volt/',
+                        'path' => $path,
                         'prefix' => 'compiled'
                     ]
                 );
